@@ -1,0 +1,26 @@
+<%- include('./partials/header.ejs') %>
+<br>
+<div class ="ui main text container">
+    <div class= "ui huge header">Restful Blog</div>
+    <div class= "ui top attached segment">
+        <div class ="ui divided item">
+            <% blogs.forEach(function(blog){ %>
+                <div class ="item">
+                    <div class ="image"><img src ="<%= blog.image %>" width="200"height="200"></div>
+                    <div class ="content"><a class= "header" href= "/blogs/<%=blog._id %>"><h2><%=blog.title %></h2></a></div>
+                    <div class ="meta"> <span><%= blog.created.toDateString() %></span></div>
+                    <div class ="description"><p><%= blog.body.substring(0,100) %>...</p></div><br>
+                    <div class= "extra">
+                        <a class= "ui floated violet button "href="/blogs/<%=blog._id %>">
+                        Read More
+                        <i class ="right chevron icon"></i>
+                        </a>
+                    </div><br>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div><br>
+
+
+<%- include('./partials/footer.ejs') %>
