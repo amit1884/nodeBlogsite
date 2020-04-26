@@ -11,7 +11,7 @@ app.set('views',path.join(__dirname,'views'));
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
-app.use(sanitizer());    //always after bodyparser
+app.use(sanitizer());
 
 ///branch first portion
 var blogSchema=new mongoose.Schema({
