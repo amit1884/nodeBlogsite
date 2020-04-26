@@ -13,7 +13,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(sanitizer());    //always after bodyparser
 
-
+///branch first portion
 var blogSchema=new mongoose.Schema({
     title:String,
     image:String,
@@ -72,7 +72,7 @@ app.get("/blogs/:id/edit",(req,res)=>{
     })
 })
 app.put("/blogs/:id",(req,res)=>{
-     Blog.findByIdAndUpdate(req.params.id,req.body.blog,(err,updatedblog)=>{
+     Blog.findByIdAndUpdate(dreq.params.i,req.body.blog,(err,updatedblog)=>{
          if(err){
              console.log("updated Blog")
         res.redirect("/blogs");
