@@ -13,7 +13,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(sanitizer());    //always after bodyparser
 
-
+///master branch portion
 var blogSchema=new mongoose.Schema({
     title:String,
     image:String,
